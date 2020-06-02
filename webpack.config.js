@@ -17,9 +17,4 @@ module.exports = {
   optimization: {
     minimizer: [new UglifyJsPlugin()],
   },
-  // plugins: [
-  //   new HtmlWebpackPlugin({
-  //     template: 'app/index.html',
-  //   }),
-  // ],
 };

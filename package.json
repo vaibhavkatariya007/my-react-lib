@@ -1,8 +1,8 @@
 {
-  "name": "scratchApp",
+  "name": "MyLib",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "The is the Javascript library created using react.js",
+  "main": "app/index.js",
   "babel": {
     "presets": [
       "@babel/preset-env",
@@ -10,7 +10,8 @@
     ]
   },
   "scripts": {
-    "start": "webpack-dev-server --open"
+    "build": "webpack",
+    "serve": "serve -s example"
   },
   "keywords": [],
   "author": "",
