@@ -15,6 +15,8 @@ To check the example first run yarn, followed by yarn build, than copy the build
 
 ### `yarn build`
 
+### Step 1.
+
 You need some server to serve the file or you can directly click the index.html file inside example folder after following the above steps.
 
 ### `yarn global add serve`
