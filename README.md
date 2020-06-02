@@ -2,7 +2,7 @@ This is a javascript libray created using react and ag-grid-react.
 
 ## Visit following link
 
-https://star-shopping-cart.herokuapp.com/
+https://vaibhavkatariya007.github.io/my-react-lib/
 
 ## Follow the Steps to run.
 

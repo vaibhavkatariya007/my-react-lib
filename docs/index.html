@@ -4,12 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MyLib - DataTable Example</title>
+    <style>
+      body {
+        background-color: #ddd;
+      }
+      h1 {
+        text-align: center;
+        text-decoration: underline;
+        color: rgb(5, 91, 180);
+      }
+    </style>
   </head>
-  <body>
+  <body onload="init();">
     <div id="app"></div>
     <script src="my-lib.js"></script>
     <script>
       function init() {
+        const { DataTable, logger } = MyLib;
         const el = document.getElementById('app');
         const tableData = {
           columns: [
@@ -23,24 +34,21 @@
             },
           ],
           rowBody: [
-            { make: 'Toyota', model: 'Celica', price: 35000 },
-            { make: 'Ford', model: 'Mondeo', price: 32000 },
-            { make: 'Porsche', model: 'Boxter', price: 72000 },
+            { make: 'Toyota', model: 'Celica', price: 1500000 },
+            { make: 'Ford', model: 'Mondeo', price: 2000000 },
+            { make: 'Porsche', model: 'Boxter', price: 2500000 },
+            { make: 'Maruti Suzuki', model: 'Zen Estilo', price: 250000 },
+            { make: 'Maruti Suzuki', model: 'Swift VXI', price: 700000 },
+            { make: 'Tata', model: 'Nexon', price: 900000 },
+            { make: 'Tata', model: 'Harrier', price: 1500000 },
+            { make: 'Tata', model: 'Tigor', price: 800000 },
           ],
         };
-        const style = { height: '200px', width: '600px' };
+        const style = { height: '400px', width: '600px', margin: '0 auto' };
         const heading = 'My Data Table.';
-        MyLib.logger('My Loaded successfully!');
-        MyLib.DataTable(el, heading, tableData, style);
+        logger('My Loaded successfully!');
+        DataTable(el, heading, tableData, style);
       }
-
-      window.addEventListener(
-        'load',
-        function () {
-          init();
-        },
-        false
-      );
     </script>
   </body>
 </html>
