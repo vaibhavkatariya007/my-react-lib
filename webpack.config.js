@@ -1,5 +1,5 @@
 const path = require('path');
-//const HtmlWebpackPlugin = require('html-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: './app/index.js',
@@ -13,7 +13,10 @@ module.exports = {
       { test: /\.(css)$/, use: ['style-loader', 'css-loader'] },
     ],
   },
-  mode: 'development',
+  mode: 'production',
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
   // plugins: [
   //   new HtmlWebpackPlugin({
   //     template: 'app/index.html',
