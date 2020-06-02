@@ -10,7 +10,7 @@
     <script src="build/my-lib.js"></script>
     <script>
       function init() {
-        const { DataTable, logger } = MyLib;
+        // const { DataTable, logger } = MyLib;
         const el = document.getElementById('app');
         const tableData = {
           columns: [
@@ -31,8 +31,8 @@
         };
         const style = { height: '200px', width: '600px' };
         const heading = 'My Data Table.';
-        logger('My Loaded successfully!');
-        DataTable(el, heading, tableData, style);
+        MyLib.logger('My Loaded successfully!');
+        MyLib.DataTable(el, heading, tableData, style);
       }
     </script>
   </body>
