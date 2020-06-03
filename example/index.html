@@ -7,20 +7,21 @@
   </head>
   <body onload="init()">
     <div id="app"></div>
+    <div id="app-my-table"></div>
     <script src="build/my-lib.js"></script>
     <script>
       function init() {
-        const { DataTable, logger } = MyLib;
+        const { DataTable, MyDataTable, logger } = MyLib;
         const el = document.getElementById('app');
+        const el2 = document.getElementById('app-my-table');
         const tableData = {
           columns: [
-            { headerName: 'Make', field: 'make', sortable: true, filter: true },
+            { headerName: 'Make', field: 'make', sortable: true },
             { headerName: 'Model', field: 'model' },
             {
               headerName: 'Price',
               field: 'price',
               sortable: true,
-              filter: true,
             },
           ],
           rowBody: [
@@ -33,6 +34,7 @@
         const heading = 'My Data Table.';
         logger('My Loaded successfully!');
         DataTable(el, heading, tableData, style);
+        MyDataTable(el2, 'My Table', tableData, style);
       }
     </script>
   </body>

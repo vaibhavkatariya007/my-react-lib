@@ -3,14 +3,16 @@
   const React = require('react');
   const ReactDOM = require('react-dom');
   const Datatable = require('./Datatable/index.js');
+  const MyDatatable = require('./MyDatatable/index.js');
   require('./index.css');
-  class App extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {};
-    }
+  class ThirdPartyTable extends React.Component {
     render() {
       return <Datatable {...this.props} />;
+    }
+  }
+  class MyOwnTable extends React.Component {
+    render() {
+      return <MyDatatable {...this.props} />;
     }
   }
 
@@ -21,7 +23,17 @@
     };
     MyLib.DataTable = function (element, heading, tableData, wrapperStyle) {
       ReactDOM.render(
-        <App
+        <ThirdPartyTable
+          heading={heading}
+          tableData={tableData}
+          wrapperStyle={wrapperStyle}
+        />,
+        element
+      );
+    };
+    MyLib.MyDataTable = function (element, heading, tableData, wrapperStyle) {
+      ReactDOM.render(
+        <MyOwnTable
           heading={heading}
           tableData={tableData}
           wrapperStyle={wrapperStyle}
